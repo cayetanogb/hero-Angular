@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;">
+    <img src="../../assets/images/{{ imagen }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ nombre }}</h5>
+      <p class="card-text">Fuerza: {{ fuerza }}</p>
+      <p class="card-text">Votos: {{ votes }}</p>
+      <a href="#" class="btn btn-primary" *ngIf="liked == false" (click)="makeFav()">Añadir a favoritos</a>
+      <a href="#" class="btn btn-primary" *ngIf="liked == true" (click)="makeFav()">Eliminar de favoritos</a>
+    </div>
+</div>
