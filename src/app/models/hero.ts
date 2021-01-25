@@ -1,8 +1,9 @@
 export class Hero {
-    id: number;
     nombre: string;
-    fuerza: number;
+    bio: string;
     imagen: string;
     liked: boolean;
-    votes: number;
+    aparicion: string;
+    casa: string;
+    id?: number;
 }

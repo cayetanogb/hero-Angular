@@ -1,22 +1,40 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+// Rutas
+import { APP_ROUNTING } from './app.routes';
+
+// Servicios
+import { HeroesService } from './services/heroes.service';
+
+// Components
 import { AppComponent } from './app.component';
-import { HeroComponentComponent } from './hero-component/hero-component.component';
-import { HeroListComponent } from './hero-list/hero-list.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { HeroListComponent } from './components/hero-list/hero-list.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { InfoHeroComponent } from './components/info-hero/info-hero.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroComponentComponent,
-    HeroListComponent
+    HeroComponent,
+    HeroListComponent,
+    NavbarComponent,
+    HomeComponent,
+    AboutComponent,
+    InfoHeroComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    APP_ROUNTING
   ],
-  providers: [],
+  providers: [
+    HeroesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

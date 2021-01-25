@@ -1,35 +1,40 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Hero } from '../models/hero';
+import { Hero } from '../../models/hero';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
-  templateUrl: './hero-component.component.html',
-  styleUrls: ['./hero-component.component.scss']
+  templateUrl: './hero.component.html'
 })
-export class HeroComponentComponent implements OnInit {
+export class HeroComponent implements OnInit {
 
   @Input() id: number;
   @Input() nombre: string;
-  @Input() fuerza: number;
+  @Input() bio: string;
   @Input() imagen: string;
   @Input() liked: boolean;
-  @Input() votes: number;
+  @Input() aparicion: string;
+  @Input() casa: string;
 
   @Output() like = new EventEmitter<Hero>(null);
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  verHero() {
+    this.router.navigate(['/heroes', this.id])
+  }
+
   makeFav(): void {
     this.like.emit({
-      id: this.id,
       nombre: this.nombre,
-      fuerza: this.fuerza,
+      bio: this.bio,
       imagen: this.imagen,
       liked: this.liked,
-      votes: this.votes
+      aparicion: this.aparicion,
+      casa: this.casa
     });
   }
 

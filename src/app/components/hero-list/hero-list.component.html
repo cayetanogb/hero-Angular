@@ -1,0 +1,37 @@
+<h1 style="text-align: center;">Lista de heroes</h1>
+<hr>
+
+<div class="row">
+  <div class="col" *ngFor="let hero of heroList; let i = index">
+    <app-hero
+      [id]="i"
+      [nombre]="hero.nombre"
+      [bio]="hero.bio"
+      [imagen]="hero.imagen"
+      [liked]="hero.liked"
+      [aparicion]="hero.aparicion"
+      [casa]="hero.casa"
+      (like)="heroLike($event)">
+    </app-hero>
+  </div>
+</div>
+
+<br><br>
+
+<h1 style="text-align: center;">Heroes favoritos</h1>
+<hr>
+
+<div class="row">
+  <div class="col" *ngFor="let heroFav of heroListFav; let i = index">
+    <app-hero
+      [id]="i"
+      [nombre]="heroFav.nombre"
+      [bio]="heroFav.bio"
+      [imagen]="heroFav.imagen"
+      [liked]="heroFav.liked"
+      [aparicion]="heroFav.aparicion"
+      [casa]="heroFav.casa"
+      (like)="heroDislike($event)">
+    </app-hero>
+  </div>
+</div>

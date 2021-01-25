@@ -1,0 +1,25 @@
+<h1>Buscando: <small>{{ texto }}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="heroList.length === 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existe el heroe: {{ texto }}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col" *ngFor="let hero of heroList">
+    <app-hero
+      [id]="hero.id"
+      [nombre]="hero.nombre"
+      [bio]="hero.bio"
+      [imagen]="hero.imagen"
+      [liked]="hero.liked"
+      [aparicion]="hero.aparicion"
+      [casa]="hero.casa"
+      (like)="heroLike($event)">
+    </app-hero>
+  </div>
+</div>
